@@ -164,8 +164,7 @@
           (setq shell-pop--window nil))
       (setq shell-pop--window
             (get-buffer-window (shell-pop--shell)))))
-  (bind-keys ([f9]  . shell-pop-toggle)
-             ("C-`" . shell-pop-toggle))
+  (bind-keys ([f9]  . shell-pop-toggle))
 
   (when (childframe-workable-p)
     (defun shell-pop-posframe-hidehandler (_)
@@ -216,8 +215,7 @@
               (setq-local cursor-type 'box) ; blink cursor
               (goto-char (point-max))
               (when (fboundp 'vterm-reset-cursor-point)
-                (vterm-reset-cursor-point)))))))
-    (bind-key "C-`" #'shell-pop-posframe-toggle)))
+                (vterm-reset-cursor-point)))))))))
 
 (provide 'init-shell)
 
